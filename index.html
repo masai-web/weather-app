@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App — Live Forecasts</title>
+    <meta name="description"
+        content="Get real-time weather information for any city worldwide. Search by city name or pick from popular destinations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1><i class="fa-solid fa-cloud-sun"></i> WeatherNow</h1>
+            <p class="tagline">Real-time weather, anywhere in the world</p>
+        </header>
+
+        <!-- Search -->
+        <div class="search-container">
+            <div class="search-box" id="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="city-input" placeholder="Search for a city..." autocomplete="off">
+                <button id="search-btn" aria-label="Search"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Popular Cities -->
+        <div class="popular-cities">
+            <p class="section-label">Popular Cities</p>
+            <div class="city-chips">
+                <button class="chip" data-city="London"><i class="fa-solid fa-location-dot"></i> London</button>
+                <button class="chip" data-city="New York"><i class="fa-solid fa-location-dot"></i> New York</button>
+                <button class="chip" data-city="Tokyo"><i class="fa-solid fa-location-dot"></i> Tokyo</button>
+                <button class="chip" data-city="Paris"><i class="fa-solid fa-location-dot"></i> Paris</button>
+                <button class="chip" data-city="Sydney"><i class="fa-solid fa-location-dot"></i> Sydney</button>
+                <button class="chip" data-city="Dubai"><i class="fa-solid fa-location-dot"></i> Dubai</button>
+                <button class="chip" data-city="Nairobi"><i class="fa-solid fa-location-dot"></i> Nairobi</button>
+                <button class="chip" data-city="Cairo"><i class="fa-solid fa-location-dot"></i> Cairo</button>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading hidden" id="loading">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-card hidden" id="error-card">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p id="error-message">City not found. Please try again.</p>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card hidden" id="weather-card">
+            <div class="weather-main">
+                <div class="weather-icon-wrap">
+                    <i id="weather-icon" class="fa-solid fa-sun"></i>
+                </div>
+                <h2 class="city-name" id="city-name">—</h2>
+                <p class="date-time" id="date-time"></p>
+                <div class="temp-display">
+                    <span class="temp-value" id="temp-value">--</span>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <p class="weather-desc" id="weather-desc">—</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item" id="detail-feels">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <div>
+                        <p class="detail-value" id="feels-like">--°C</p>
+                        <p class="detail-label">Feels Like</p>
+                    </div>
+                </div>
+                <div class="detail-item" id="detail-humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div>
+                        <p class="detail-value" id="humidity">--%</p>
+                        <p class="detail-label">Humidity</p>
+                    </div>
+                </div>
+                <div class="detail-item" id="detail-wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <div>
+                        <p class="detail-value" id="wind-speed">-- km/h</p>
+                        <p class="detail-label">Wind Speed</p>
+                    </div>
+                </div>
+                <div class="detail-item" id="detail-pressure">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <div>
+                        <p class="detail-value" id="pressure">-- hPa</p>
+                        <p class="detail-label">Pressure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
