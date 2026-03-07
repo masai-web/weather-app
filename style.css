@@ -18,13 +18,13 @@ body {
     padding: 40px 16px 60px;
 }
 
-/* ===== App Container ===== */
+
 .app-container {
     width: 100%;
     max-width: 560px;
 }
 
-/* ===== Header ===== */
+
 .app-header {
     text-align: center;
     margin-bottom: 32px;
@@ -52,7 +52,7 @@ body {
     font-weight: 300;
 }
 
-/* ===== Search ===== */
+
 .search-container {
     margin-bottom: 20px;
 }
@@ -119,7 +119,7 @@ body {
     transform: scale(0.96);
 }
 
-/* ===== Popular Cities ===== */
+
 .popular-cities {
     margin-bottom: 28px;
 }
@@ -171,7 +171,7 @@ body {
     transform: translateY(0);
 }
 
-/* ===== Loading ===== */
+
 .loading {
     text-align: center;
     padding: 60px 20px;
@@ -198,7 +198,6 @@ body {
     color: rgba(255, 255, 255, 0.45);
 }
 
-/* ===== Error Card ===== */
 .error-card {
     text-align: center;
     padding: 40px 20px;
@@ -220,7 +219,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* ===== Weather Card ===== */
 .weather-card {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -249,7 +247,7 @@ body {
     animation: iconFloat 3s ease-in-out infinite;
 }
 
-/* Different icon colour schemes */
+
 .weather-icon-wrap i.icon-rain {
     background: linear-gradient(135deg, #60a5fa, #818cf8);
     -webkit-background-clip: text;
@@ -339,7 +337,7 @@ body {
     font-weight: 300;
 }
 
-/* ===== Weather Details Grid ===== */
+
 .weather-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -396,7 +394,7 @@ body {
     margin-top: 1px;
 }
 
-/* ===== Animations ===== */
+
 @keyframes fadeSlideUp {
     from {
         opacity: 0;
@@ -409,12 +407,12 @@ body {
     }
 }
 
-/* ===== Utility ===== */
+
 .hidden {
     display: none !important;
 }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 480px) {
     body {
         padding: 24px 12px 40px;

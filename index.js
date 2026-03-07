@@ -22,7 +22,7 @@ const pressure = document.getElementById("pressure");
 
 const chips = document.querySelectorAll(".chip");
 
-// ===== Weather Icon Mapping =====
+
 function getWeatherIcon(conditionId) {
     // https://openweathermap.org/weather-conditions
     if (conditionId >= 200 && conditionId < 300) {
@@ -62,7 +62,7 @@ function formatDateTime(timezoneOffset) {
     return cityTime.toLocaleString("en-US", options);
 }
 
-// ===== Show / Hide Helpers =====
+
 function showLoading() {
     loading.classList.remove("hidden");
     weatherCard.classList.add("hidden");
@@ -80,13 +80,13 @@ function showWeather() {
     loading.classList.add("hidden");
     errorCard.classList.add("hidden");
     weatherCard.classList.remove("hidden");
-    // Re-trigger animation
+
     weatherCard.style.animation = "none";
-    weatherCard.offsetHeight; // force reflow
+    weatherCard.offsetHeight;
     weatherCard.style.animation = "";
 }
 
-// ===== Fetch Weather =====
+
 async function fetchWeather(city) {
     if (!city.trim()) return;
 
@@ -114,7 +114,7 @@ async function fetchWeather(city) {
     }
 }
 
-// ===== Display Weather Data =====
+
 function displayWeather(data) {
     cityName.textContent = `${data.name}, ${data.sys.country}`;
     dateTime.textContent = formatDateTime(data.timezone);
@@ -125,14 +125,14 @@ function displayWeather(data) {
     windSpeed.textContent = `${(data.wind.speed * 3.6).toFixed(1)} km/h`;
     pressure.textContent = `${data.main.pressure} hPa`;
 
-    // Set icon
+
     const { icon, colorClass } = getWeatherIcon(data.weather[0].id);
     weatherIcon.className = icon + (colorClass ? ` ${colorClass}` : "");
 
     showWeather();
 }
 
-// ===== Event Listeners =====
+
 searchBtn.addEventListener("click", () => {
     fetchWeather(cityInput.value);
 });
@@ -149,7 +149,6 @@ chips.forEach((chip) => {
         cityInput.value = city;
         fetchWeather(city);
     });
-});
+})
 
-// ===== Load Default City =====
 fetchWeather("Nairobi");
