@@ -1,6 +1,8 @@
-// ===== Configuration =====
-const API_KEY = "abc20c836fb4b126a8658e9e361e20e9";
-const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+// ===== Configuration (Managed in config.js) =====
+if (typeof API_KEY === 'undefined') {
+    console.error("API_KEY is not defined. Please ensure config.js is created and loaded.");
+}
+
 
 // ===== DOM Elements =====
 const cityInput = document.getElementById("city-input");
